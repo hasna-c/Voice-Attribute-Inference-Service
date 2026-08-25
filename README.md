@@ -40,7 +40,7 @@ Accepts a multipart form upload containing an audio file.
   "processing_ms": 1606,
   "audio_quality": "good"
 } 
-
+```
 
 ### Setup & Running via Docker
 # 1. Build the Docker image
