@@ -42,13 +42,18 @@ Accepts a multipart form upload containing an audio file.
 } 
 ```
 
-### Setup & Running via Docker
-# 1. Build the Docker image
+## Setup & Running via Docker
+### 1. Build the Docker image
 ```bash
 docker build -t voice-attribute-service .
 ```
 
-# 2. Run the container and map port 8000
+### 2. Run the container and map port 8000
 ```bash
 docker run -p 8000:8000 voice-attribute-service
+```
+
+### open browser to the interactive API documentation:
+```bash
+http://localhost:8000/docs
 ```
