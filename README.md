@@ -39,7 +39,10 @@ Accepts a multipart form upload containing an audio file.
   },
   "processing_ms": 1606,
   "audio_quality": "good"
-}
+} ```
+
+
+
 # 1. Build the Docker image
 docker build -t voice-attribute-service .
 
