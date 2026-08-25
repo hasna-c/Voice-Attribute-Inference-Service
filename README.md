@@ -12,7 +12,6 @@ A lightweight, production-ready backend service designed for logistics voice AI 
 
 ---
 
-
 ## API Contract
 
 ### `POST /analyze`
@@ -41,16 +40,8 @@ Accepts a multipart form upload containing an audio file.
   "processing_ms": 1606,
   "audio_quality": "good"
 }
-
-## Setup & Running via Docker
-
-
-```bash
 # 1. Build the Docker image
 docker build -t voice-attribute-service .
 
 # 2. Run the container and map port 8000
 docker run -p 8000:8000 voice-attribute-service
-
-# open browser to the interactive API documentation:
-http://localhost:8000/docs
