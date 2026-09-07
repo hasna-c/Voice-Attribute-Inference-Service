@@ -57,10 +57,8 @@ docker run -p 8000:8000 voice-attribute-service
 ```bash
 http://localhost:8000/docs
 ```
-### Architecture & Design Rationale
-To build this service, I chose **FastAPI** for its blazing-fast async performance, low overhead, and automatic documentation, which is crucial for real-time logistics voice integrations. For attribute inference, I utilized **Wav2Vec2** pretrained models combined with lightweight acoustic feature extraction (RMS and spectral flatness via `librosa`) to handle logistics-grade noise (warehouse echoes, background truck engines) and gracefully flag degraded or insufficient audio rather than failing silently. Zero PII persistence is strictly enforced by routing incoming audio files through volatile in-memory buffers (`io.BytesIO`) without writing anything to disk.
 
-With more time, I would incorporate a dedicated noise-suppression pre-processing filter (like `noisereduce`) and train a multi-task classification head directly on a logistics-focused dataset (e.g., VoxCeleb/Mozilla Common Voice) to boost age bracket confidence. To scale this architecture to **1,000 concurrent calls**, I would scale the containerized service horizontally behind an Nginx or Traefik reverse proxy using Docker Compose scale-out workers, introduce an asynchronous task queue (such as Celery with Redis) or a gRPC worker pool, and implement model caching to handle high throughput efficiently.
+
 ### Sample Test & Smoke Test Instructions
 ```bash
 pip install pytest httpx
